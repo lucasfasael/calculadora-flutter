@@ -12,18 +12,21 @@ class MeuApp extends StatefulWidget {
 class _MeuAppState extends State<MeuApp> {
   TextEditingController n1Controller = TextEditingController();
   TextEditingController n2Controller = TextEditingController();
+  int teste = 5;
   String somar(String n1, String n2) {
     return (int.parse(n1) + int.parse(n2)).toString();
   }
 
-  int subtrair(int n1, int n2) {
-    return n1 - n2;
+  String subtrair(String n1, String n2) {
+    return (int.parse(n1) - int.parse(n2)).toString();
   }
-  int multiplicar(int n1, int n2) {
-    return n1 * n2;
+
+  String multiplicar(String n1, String n2) {
+    return (int.parse(n1) * int.parse(n2)).toString();
   }
-  double dividir(int n1, int n2) {
-    return n1 / n2;
+
+  String dividir(String n1, String n2) {
+    return (int.parse(n1) / int.parse(n2)).toString();
   }
 
   @override
@@ -53,9 +56,9 @@ class _MeuAppState extends State<MeuApp> {
                     showDialog(
                         context: context,
                         builder: (context) {
-                          return AlertDialog(
-                            title: Text(somar(n1Controller.text,n2Controller.text))
-                          );
+                          String resultado =
+                              somar(n1Controller.text, n2Controller.text);
+                          return AlertDialog(title: Text(resultado));
                         });
                   },
                 ),
@@ -80,7 +83,9 @@ class _MeuAppState extends State<MeuApp> {
                         context: context,
                         builder: (context) {
                           return AlertDialog(
-                            title: Text("Minha batata é mutante radiotiva"),
+                            title: Text((int.parse(n1Controller.text) *
+                                    int.parse(n2Controller.text))
+                                .toString()),
                           );
                         });
                   },

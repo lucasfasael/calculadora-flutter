@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:primeiro_projeto/exemplo_nome.dart';
 import 'package:primeiro_projeto/meu_app.dart';
 
 void main() {
@@ -19,4 +20,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
